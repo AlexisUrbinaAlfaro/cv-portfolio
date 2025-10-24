@@ -1,0 +1,488 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --bg-color: #f5f6fa;
+    --text-color: #2c3e50;
+    --heading-color: #2c3e50;
+    --link-color: #3498db;
+    --gray-light: #f8f9fa;
+    --gray: #6c757d;
+    --shadow: 0 2px 4px rgba(0,0,0,0.1);
+    --nav-bg: rgba(255, 255, 255, 0.95);
+    --nav-width: 250px;
+}
+
+html {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+body {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    position: relative;
+}
+
+.nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;  /* Cambiado para asegurar que esté fuera de la vista */
+    width: var(--nav-width);
+    height: 100vh;
+    background-color: var(--nav-bg);
+    padding: 1rem;
+    box-shadow: var(--shadow);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.nav-menu.active {
+    right: 0;
+}
+
+#menu-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 1001;
+    transition: background-color 0.3s ease;
+}
+
+#menu-toggle:hover {
+    background-color: var(--secondary-color);
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 3rem;
+}
+
+.nav-menu ul li {
+    margin: 0.5rem 0;
+}
+
+.nav-menu ul li a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+}
+
+.nav-menu ul li a:hover {
+    background-color: var(--gray-light);
+    color: var(--secondary-color);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.contact-info {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0.25rem 0;
+}
+
+.contact-info div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#social-media {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 0.25rem;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+#social-media a {
+    color: var(--gray);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+#social-media a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+h1, h2, h3, h4 {
+    color: var(--heading-color);
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 2.2rem;
+    text-align: center;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 1.8rem;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: var(--secondary-color);
+}
+
+h4 {
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: #666;
+}
+
+#social-media {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 2rem 0;
+}
+
+#social-media ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+#social-media li {
+    margin: 0.5rem;
+}
+
+section {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.profile-summary {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.highlight {
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 1.1em;
+}
+
+.personal-info {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+    color: var(--gray);
+}
+
+.personal-info span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.job {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.job:last-child {
+    border-bottom: none;
+}
+
+.job-header {
+    margin-bottom: 1rem;
+}
+
+.job-info {
+    display: flex;
+    gap: 1rem;
+    margin: 0.5rem 0;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.job-title, .job-date {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.job-title {
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 1.1em;
+    flex: 1;
+}
+
+.job-date {
+    color: var(--secondary-color);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+    .job-info {
+        gap: 0.5rem;
+    }
+    
+    .job-title, .job-date {
+        width: 100%;
+    }
+
+    .job ul {
+        margin-top: 1rem;
+    }
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.skill-category {
+    background: var(--gray-light);
+    padding: 1.5rem;
+    border-radius: 6px;
+}
+
+.skill-category h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.education-item {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.education-item:last-child {
+    border-bottom: none;
+}
+
+.education-info {
+    display: flex;
+    gap: 2rem;
+    color: var(--gray);
+    margin: 0.5rem 0;
+    flex-wrap: wrap;
+}
+
+.education-type, .education-date {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.education-achievements {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.achievement {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--gray-light);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: var(--primary-color);
+}
+
+.achievement i {
+    color: var(--accent-color);
+}
+
+.cert-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.cert-category {
+    margin-top: 1rem;
+}
+
+.cert-category h3 {
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--gray-light);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.cert-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--gray-light);
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+.cert-item:hover {
+    transform: translateY(-2px);
+}
+
+.cert-item i {
+    color: var(--accent-color);
+    font-size: 1.2em;
+    margin-top: 0.2rem;
+}
+
+.cert-info {
+    flex: 1;
+}
+
+.cert-info h4 {
+    margin: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.cert-info p {
+    margin: 0.2rem 0 0;
+    color: var(--gray);
+    font-size: 0.9em;
+}
+
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.interest-item {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--gray-light);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.interest-item:hover {
+    transform: translateY(-2px);
+}
+
+.interest-item i {
+    font-size: 2em;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.interest-item h3 {
+    color: var(--primary-color);
+    margin: 0.5rem 0;
+}
+
+.interest-item p {
+    color: var(--gray);
+    font-size: 0.9em;
+    margin: 0;
+}
+
+ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+li {
+    margin-bottom: 0.8rem;
+}
+
+.job ul li {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.job ul li i {
+    color: var(--secondary-color);
+    font-size: 0.8em;
+}
+
+a:visited, a:link {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+    background-color: transparent;
+}
+
+div {
+    margin: 0.5rem 0;
+}
+
+p {
+    text-align: justify;
+    margin: 1rem 0;
+}
